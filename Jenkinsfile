@@ -92,8 +92,8 @@ def addGenerateReport() {
 def installSonarQubeCLI() {
     sh '''
         wget -O sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-        unzip -o -q sonar-scanner.zip
-        rm -rf /opt/sonar-scanner
+        sudo unzip -o -q sonar-scanner.zip
+        sudo rm -rf /opt/sonar-scanner
         sudo mv --force sonar-scanner-5.0.1.3006-linux /opt/sonar-scanner
         sudo sh -c 'echo "#/bin/bash \nexport PATH=\\\"$PATH:/opt/sonar-scanner/bin\\\"" >/etc/profile.d/sonar-scanner.sh'
         sudo chmod +x /opt/sonar-scanner/bin/sonar-scanner
